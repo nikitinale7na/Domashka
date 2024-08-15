@@ -22,7 +22,26 @@ class Vehicle:
         print(self.get_color())
         print(f'Владелец: {self.owner}')
 
-    def set_color(self):
+        def set_color(self, new_color: str):
+        self.new_color = new_color
+        if new_color.lower() in self.__COLOR_VARIANTS:
+            self.__color = new_color
+        else:
+            print(f'Нельзя сменить цвет на {self.new_color}')
+
+class Sedan(Vehicle):
+    __PASSENGERS_LIMIT = 5
+
+# Текущие цвета __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
+vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'синий', 500)
+
+# Изначальные свойства
+vehicle1.print_info()
+
+# Меняем свойства (в т.ч. вызывая методы)
+vehicle1.set_color('Розовый')
+vehicle1.set_color('ЧЕРНЫЙ')
+vehicle1.owner = 'Vasyok'
 
 class Sedan(Vehicle):
     __PASSENGERS_LIMIT = 5
