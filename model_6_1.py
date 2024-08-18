@@ -15,10 +15,10 @@ class Animal:
             self.alive = False
 
 class Plant:
+    edible = False      # съедобное
     def __init__(self, name):
         self.name = name
-        self.edible = False      # съедобное
-
+        
 
 class Mammal(Animal):
     pass
